@@ -53,7 +53,7 @@ export default function Navbar() {
             >
               {link.label}
               {activeSection === link.label && (
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-green rounded-full shadow-[0_0_8px_rgba(57,224,122,0.8)]" />
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-green rounded-full shadow-[0_0_8px_rgba(13,148,136,0.3)]" />
               )}
             </a>
           ))}

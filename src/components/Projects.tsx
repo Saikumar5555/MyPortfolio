@@ -36,9 +36,30 @@ const projects = [
   }
 ];
 
+const projectStyles = [
+  {
+    sub: "text-pastel-purple-text",
+    bullet: "bg-pastel-purple-text/70",
+    tag: "bg-pastel-purple-bg text-pastel-purple-text border-pastel-purple-text/15 hover:border-pastel-purple-text/30",
+    cardHover: "hover:border-pastel-purple-text/30 hover:shadow-xl hover:shadow-pastel-purple-bg/15"
+  },
+  {
+    sub: "text-pastel-blue-text",
+    bullet: "bg-pastel-blue-text/70",
+    tag: "bg-pastel-blue-bg text-pastel-blue-text border-pastel-blue-text/15 hover:border-pastel-blue-text/30",
+    cardHover: "hover:border-pastel-blue-text/30 hover:shadow-xl hover:shadow-pastel-blue-bg/15"
+  },
+  {
+    sub: "text-pastel-mint-text",
+    bullet: "bg-pastel-mint-text/70",
+    tag: "bg-pastel-mint-bg text-pastel-mint-text border-pastel-mint-text/15 hover:border-pastel-mint-text/30",
+    cardHover: "hover:border-pastel-mint-text/30 hover:shadow-xl hover:shadow-pastel-mint-bg/15"
+  }
+];
+
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 border-t border-brand-border/40">
+    <section id="projects" className="py-20 border-t border-brand-border/40 bg-bg-projects">
       <div className="max-w-[1180px] mx-auto px-6 md:px-10">
         <div className="font-mono text-[13px] text-brand-green flex items-center gap-2.5 mb-3">
           <span className="text-brand-muted-2">//</span> projects
@@ -46,47 +67,50 @@ export default function Projects() {
         <h2 className="font-disp font-bold text-3xl md:text-4xl mb-11 tracking-tight">Selected work</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((proj, idx) => (
-            <div
-              key={idx}
-              className="bg-brand-card border border-brand-border rounded-lg p-6.5 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 hover:border-brand-green-dim hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)]"
-            >
-              {/* Project index number */}
-              <div className="font-mono text-[12px] text-brand-muted-2 mb-3.5">
-                {proj.num}
+          {projects.map((proj, idx) => {
+            const style = projectStyles[idx % projectStyles.length];
+            return (
+              <div
+                key={idx}
+                className={`bg-brand-card border border-brand-border rounded-lg p-6.5 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 ${style.cardHover}`}
+              >
+                {/* Project index number */}
+                <div className="font-mono text-[12px] text-brand-muted-2 mb-3.5">
+                  {proj.num}
+                </div>
+                
+                {/* Title & Sub */}
+                <h3 className="font-disp text-[20px] font-semibold mb-1.5 text-brand-ivory group-hover:text-brand-green transition-colors">
+                  {proj.title}
+                </h3>
+                <div className={`font-mono text-[11px] tracking-wider uppercase mb-5 ${style.sub}`}>
+                  {proj.sub}
+                </div>
+                
+                {/* Contributions */}
+                <ul className="text-brand-muted text-[13.5px] space-y-2.5 flex-grow mb-6 list-none">
+                  {proj.highlights.map((bullet, bIdx) => (
+                    <li key={bIdx} className="relative pl-4.5">
+                      <span className={`absolute left-0 top-2.5 w-1.25 h-1.25 rounded-full ${style.bullet}`} />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+                
+                {/* Tags Row */}
+                <div className="flex flex-wrap gap-1.5 pt-4 border-t border-brand-border/40 mt-auto">
+                  {proj.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className={`font-mono text-[10.5px] border px-2.5 py-1 rounded-full transition-colors ${style.tag}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-              
-              {/* Title & Sub */}
-              <h3 className="font-disp text-[20px] font-semibold mb-1.5 text-brand-ivory group-hover:text-brand-green transition-colors">
-                {proj.title}
-              </h3>
-              <div className="font-mono text-[11px] text-brand-green tracking-wider uppercase mb-5">
-                {proj.sub}
-              </div>
-              
-              {/* Contributions */}
-              <ul className="text-brand-muted text-[13.5px] space-y-2.5 flex-grow mb-6 list-none">
-                {proj.highlights.map((bullet, bIdx) => (
-                  <li key={bIdx} className="relative pl-4.5">
-                    <span className="absolute left-0 top-2.5 w-1.25 h-1.25 rounded-full bg-brand-green-dim" />
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-              
-              {/* Tags Row */}
-              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-brand-border/40 mt-auto">
-                {proj.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="font-mono text-[10.5px] text-brand-muted-2 border border-brand-border bg-brand-bg-alt/50 px-2.5 py-1 rounded-full hover:text-brand-green hover:border-brand-green/30 transition-colors"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

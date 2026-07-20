@@ -2,12 +2,12 @@ export default function Contact() {
   const email = 'saikumar235711@gmail.com';
 
   return (
-    <section id="contact" className="py-20 border-t border-brand-border/40">
+    <section id="contact" className="py-20 border-t border-brand-border/40 bg-bg-contact">
       <div className="max-w-[1180px] mx-auto px-6 md:px-10">
         <div className="relative bg-brand-card border border-brand-border rounded-2xl px-8 py-16 md:py-20 text-center overflow-hidden">
           
           {/* Glowing background circle */}
-          <div className="absolute -top-[40%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(circle,rgba(6,182,212,0.12),transparent_70%)] pointer-events-none z-0" />
+          <div className="absolute -top-[40%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(circle,rgba(124,58,237,0.05),transparent_70%)] pointer-events-none z-0" />
           
           <div className="relative z-10 space-y-6">
             <h2 className="font-disp text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-ivory">
@@ -24,7 +24,7 @@ export default function Contact() {
                 href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block font-mono text-[13.5px] font-semibold bg-gradient-to-r from-brand-green to-brand-green-dim text-brand-bg px-6 py-3.5 rounded-lg shadow-lg shadow-brand-green/10 hover:shadow-brand-green/20 hover:-translate-y-[1px] transition-all duration-300"
+                className="inline-block font-mono text-[13.5px] font-semibold bg-brand-green text-brand-bg px-6 py-3.5 rounded-lg shadow-lg shadow-brand-green/10 hover:shadow-brand-green/20 hover:-translate-y-[1px] transition-all duration-300"
               >
                 saikumar235711@gmail.com
               </a>

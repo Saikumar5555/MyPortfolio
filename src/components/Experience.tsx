@@ -26,7 +26,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 border-t border-brand-border/40">
+    <section id="experience" className="py-20 border-t border-brand-border/40 bg-bg-experience">
       <div className="max-w-[1180px] mx-auto px-6 md:px-10">
         <div className="font-mono text-[13px] text-brand-green flex items-center gap-2.5 mb-3">
           <span className="text-brand-muted-2">//</span> experience
@@ -37,7 +37,7 @@ export default function Experience() {
           {experiences.map((exp, idx) => (
             <div key={idx} className="relative group">
               {/* Timeline marker node dot */}
-              <div className="absolute -left-[38px] md:-left-[46px] top-1.5 w-[11px] h-[11px] rounded-full bg-brand-bg border-2 border-brand-green shadow-[0_0_12px_rgba(57,224,122,0.4)] group-hover:scale-125 transition-transform duration-200" />
+              <div className="absolute -left-[38px] md:-left-[46px] top-1.5 w-[11px] h-[11px] rounded-full bg-brand-bg border-2 border-brand-green shadow-[0_0_12px_rgba(13,148,136,0.2)] group-hover:scale-125 transition-transform duration-200" />
               
               {/* Date Period */}
               <div className="font-mono text-[12px] text-brand-muted-2 mb-1.5 tracking-wider">

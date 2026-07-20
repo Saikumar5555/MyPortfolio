@@ -2,7 +2,7 @@
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 border-t border-brand-border/40">
+    <section id="education" className="py-20 border-t border-brand-border/40 bg-bg-education">
       <div className="max-w-[1180px] mx-auto px-6 md:px-10">
         <div className="font-mono text-[13px] text-brand-green flex items-center gap-2.5 mb-3">
           <span className="text-brand-muted-2">//</span> education

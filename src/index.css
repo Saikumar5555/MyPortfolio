@@ -3,16 +3,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #030712;
-  --color-brand-bg-alt: #0b0f19;
-  --color-brand-card: #0c1122;
-  --color-brand-border: #1f293d;
-  --color-brand-green: #06b6d4; /* Vibrant Cyan */
-  --color-brand-green-dim: #3b82f6; /* Modern Blue */
-  --color-brand-green-glow: rgba(6, 182, 212, 0.15);
-  --color-brand-ivory: #f8fafc;
-  --color-brand-muted: #94a3b8;
-  --color-brand-muted-2: #4b5563;
+  --color-brand-bg: #ffffff; /* White background */
+  --color-brand-bg-alt: #ffffff; /* White background alternate */
+  --color-brand-card: #ffffff; /* White cards */
+  --color-brand-border: rgba(24, 24, 27, 0.08); /* Faint Ink Black border */
+  --color-brand-green: #7c3aed; /* Pastel Lavender Accent */
+  --color-brand-green-dim: #9333ea; /* Lavender Accent variant */
+  --color-brand-green-glow: rgba(124, 58, 237, 0.08);
+  --color-brand-ivory: #18181b; /* Ink Black Text */
+  --color-brand-muted: #3f3f46; /* Charcoal Text */
+  --color-brand-muted-2: #52525b; /* Slate Text */
+
+  /* Section backgrounds - strictly using Pure White for layout */
+  --color-bg-hero: #ffffff;
+  --color-bg-about: #ffffff;
+  --color-bg-experience: #ffffff;
+  --color-bg-projects: #ffffff;
+  --color-bg-education: #ffffff;
+  --color-bg-contact: #ffffff;
+
+  /* Tag colors mapped to Pastel Lavender palette */
+  --color-pastel-mint-bg: #f3e8ff;
+  --color-pastel-mint-text: #6b21a8;
+  --color-pastel-blue-bg: #f3e8ff;
+  --color-pastel-blue-text: #6b21a8;
+  --color-pastel-purple-bg: #f3e8ff;
+  --color-pastel-purple-text: #6b21a8;
 
   --font-mono: 'JetBrains Mono', monospace;
   --font-disp: 'Space Grotesk', sans-serif;
@@ -24,15 +40,15 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: #030712;
-    color: #f8fafc;
+    background-color: #ffffff;
+    color: #18181b;
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
   }
   ::selection {
-    background-color: #06b6d4;
-    color: #030712;
+    background-color: #e9d5ff; /* Soft lavender selection */
+    color: #18181b;
   }
 }
 
@@ -41,38 +57,22 @@
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(6, 182, 212, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(6, 182, 212, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(24, 24, 27, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 24, 27, 0.03) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 30%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 30%, transparent 100%);
-  z-index: 0;
+  z-index: 20;
   pointer-events: none;
 }
 
-/* Premium ambient glows */
+/* Premium ambient glows (Disabled to maintain strict 3-color monochromatic look) */
 .ambient-glow {
-  position: fixed;
-  top: -10%;
-  left: -5%;
-  width: 45vw;
-  height: 45vh;
-  background: radial-gradient(circle at center, rgba(6, 182, 212, 0.06) 0%, transparent 70%);
-  z-index: 0;
-  pointer-events: none;
-  filter: blur(100px);
+  display: none;
 }
 
 .ambient-glow-right {
-  position: fixed;
-  bottom: -15%;
-  right: -5%;
-  width: 50vw;
-  height: 50vh;
-  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
-  z-index: 0;
-  pointer-events: none;
-  filter: blur(120px);
+  display: none;
 }
 
 /* Animations */

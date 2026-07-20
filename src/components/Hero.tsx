@@ -81,15 +81,15 @@ export default function Hero() {
         const x = i * 62; // Column spacing
         const y = drops[i] * fontSize;
 
-        // Draw the leading symbol (brightest cyan)
-        ctx.fillStyle = 'rgba(6, 182, 212, 0.15)'; 
+        // Draw the leading symbol (soft lavender)
+        ctx.fillStyle = 'rgba(124, 58, 237, 0.06)'; 
         ctx.fillText(text, x, y);
 
         // Draw trailing characters fading out
         for (let j = 1; j <= 4; j++) {
           const trailY = y - (j * fontSize * 1.6);
           if (trailY > 0) {
-            ctx.fillStyle = `rgba(6, 182, 212, ${0.15 / (j + 1.2)})`;
+            ctx.fillStyle = `rgba(124, 58, 237, ${0.06 / (j + 1.2)})`;
             ctx.fillText(text, x, trailY);
           }
         }
@@ -115,7 +115,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <header id="home" className="min-h-[calc(100vh-72px)] flex items-center py-12 md:py-16 relative overflow-hidden">
+    <header id="home" className="min-h-[calc(100vh-72px)] flex items-center py-12 md:py-16 relative overflow-hidden bg-bg-hero">
       {/* Subtle Digital Code Rain */}
       <canvas
         ref={canvasRef}
@@ -146,7 +146,7 @@ export default function Hero() {
           <div className="flex gap-4.5 flex-wrap mb-9 reveal-up delay-200">
             <a
               href="#contact"
-              className="font-mono text-[13.5px] font-semibold bg-gradient-to-r from-brand-green to-brand-green-dim text-brand-bg px-7 py-3.5 rounded-lg shadow-lg shadow-brand-green/10 hover:shadow-brand-green/20 hover:-translate-y-[1px] transition-all duration-300"
+              className="font-mono text-[13.5px] font-semibold bg-brand-green text-brand-bg px-7 py-3.5 rounded-lg shadow-lg shadow-brand-green/10 hover:shadow-brand-green/20 hover:-translate-y-[1px] transition-all duration-300"
             >
               Get in touch
             </a>
@@ -169,7 +169,7 @@ export default function Hero() {
         {/* Profile Image Card */}
         <div className="relative group justify-self-center lg:justify-self-end w-full max-w-[400px] reveal-up delay-200">
           {/* Glowing backdrops */}
-          <div className="absolute -inset-1.5 bg-gradient-to-r from-brand-green/30 to-brand-green-dim/20 rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition-opacity duration-500 animate-pulse"></div>
+          <div className="absolute -inset-1.5 bg-brand-green/10 rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition-opacity duration-500 animate-pulse"></div>
           
           {/* Card outline border decoration */}
           <div className="absolute inset-0 bg-brand-green/5 rounded-2xl border border-brand-green/20 group-hover:border-brand-green/30 transition-colors duration-300 pointer-events-none"></div>

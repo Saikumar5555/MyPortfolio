@@ -13,9 +13,27 @@ const skillCategories = [
   }
 ];
 
+const categoryStyles = [
+  {
+    header: "text-pastel-mint-text",
+    tag: "bg-pastel-mint-bg text-pastel-mint-text border-pastel-mint-text/20 hover:border-pastel-mint-text hover:-translate-y-[0.5px]",
+    cardHover: "hover:border-pastel-mint-text/40 hover:shadow-lg hover:shadow-pastel-mint-bg/15"
+  },
+  {
+    header: "text-pastel-blue-text",
+    tag: "bg-pastel-blue-bg text-pastel-blue-text border-pastel-blue-text/20 hover:border-pastel-blue-text hover:-translate-y-[0.5px]",
+    cardHover: "hover:border-pastel-blue-text/40 hover:shadow-lg hover:shadow-pastel-blue-bg/15"
+  },
+  {
+    header: "text-pastel-purple-text",
+    tag: "bg-pastel-purple-bg text-pastel-purple-text border-pastel-purple-text/20 hover:border-pastel-purple-text hover:-translate-y-[0.5px]",
+    cardHover: "hover:border-pastel-purple-text/40 hover:shadow-lg hover:shadow-pastel-purple-bg/15"
+  }
+];
+
 export default function About() {
   return (
-    <section id="about" className="py-20 border-t border-brand-border/40">
+    <section id="about" className="py-20 border-t border-brand-border/40 bg-bg-about">
       <div className="max-w-[1180px] mx-auto px-6 md:px-10">
         <div className="font-mono text-[13px] text-brand-green flex items-center gap-2.5 mb-3">
           <span className="text-brand-muted-2">//</span> about
@@ -50,26 +68,29 @@ export default function About() {
 
         {/* Skill Groups Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {skillCategories.map((category, idx) => (
-            <div
-              key={idx}
-              className="bg-brand-card border border-brand-border rounded-lg p-[18px] md:p-[20px] transition-colors duration-300 hover:border-brand-green/35"
-            >
-              <div className="font-mono text-[11px] text-brand-green tracking-wider uppercase mb-3.5">
-                {category.title}
+          {skillCategories.map((category, idx) => {
+            const style = categoryStyles[idx % categoryStyles.length];
+            return (
+              <div
+                key={idx}
+                className={`bg-brand-card border border-brand-border rounded-lg p-[18px] md:p-[20px] transition-all duration-300 ${style.cardHover}`}
+              >
+                <div className={`font-mono text-[11px] tracking-wider uppercase mb-3.5 ${style.header}`}>
+                  {category.title}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className={`font-mono text-[11.5px] border px-3 py-1 rounded-full transition-all duration-200 ${style.tag}`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="font-mono text-[11.5px] text-brand-ivory border border-brand-border bg-brand-bg-alt px-3 py-1 rounded-full transition-all duration-200 hover:border-brand-green hover:text-brand-green hover:-translate-y-[0.5px]"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
