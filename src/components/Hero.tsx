@@ -9,7 +9,7 @@ export default function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
-  // Typewriter 
+  // Typewriter effect
   useEffect(() => {
     const currentRole = roles[roleIndex];
     let timer: any;
