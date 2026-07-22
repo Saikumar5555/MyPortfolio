@@ -10,6 +10,9 @@ export default function Contact() {
           <div className="absolute -top-[40%] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(circle,rgba(124,58,237,0.05),transparent_70%)] pointer-events-none z-0" />
           
           <div className="relative z-10 space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100/90 border border-purple-200 text-purple-950 font-mono text-[15px] font-bold shadow-xs">
+              <span className="text-purple-600 font-extrabold">//</span> contact
+            </div>
             <h2 className="font-disp text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-ivory">
               Let's build something together
             </h2>

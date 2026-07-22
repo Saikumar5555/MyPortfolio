@@ -28,8 +28,8 @@ export default function Experience() {
   return (
     <section id="experience" className="py-20 border-t border-brand-border/40 bg-bg-experience">
       <div className="max-w-[1180px] mx-auto px-6 md:px-10">
-        <div className="font-mono text-[13px] text-brand-green flex items-center gap-2.5 mb-3">
-          <span className="text-brand-muted-2">//</span> experience
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100/90 border border-purple-200 text-purple-950 font-mono text-[15px] font-bold mb-4 shadow-xs">
+          <span className="text-purple-600 font-extrabold">//</span> experience
         </div>
         <h2 className="font-disp font-bold text-3xl md:text-4xl mb-11 tracking-tight">Where I've worked</h2>
         
